@@ -1,0 +1,57 @@
+@(id: String, seriadoForm: Form[Seriado],seriado: Seriado,totalPersonagens: Integer)
+
+@import helper._
+
+@main("Alterar seriado") {
+
+    <h1>Alterar seriado</h1>
+
+    @form(routes.Application.alterar(id)) {
+   <p>
+    <div class="input-group">
+     <span class="input-group-addon">Nome</span>
+     <input type="text" name="nome" id="nome" class="form-control" value="@seriado.nome" placeholder="nome do seriado ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 1</span>
+     <input type="text" name="personagem1" id="personagem1" value="@if(totalPersonagens>0) { @seriado.personagens(0) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 2</span>
+     <input type="text" name="personagem2" id="personagem2" value="@if(totalPersonagens>1) { @seriado.personagens(1) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 3</span>
+     <input type="text" name="personagem3" id="personagem3" value="@if(totalPersonagens>2) { @seriado.personagens(2) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 4</span>
+     <input type="text" name="personagem4" id="personagem4" value="@if(totalPersonagens>3) { @seriado.personagens(3) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+        <div class="input-group">
+     <span class="input-group-addon">Personagem 5</span>
+     <input type="text" name="personagem5" id="personagem5" value="@if(totalPersonagens>4) { @seriado.personagens(4) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 6</span>
+     <input type="text" name="personagem6" id="personagem6" value="@if(totalPersonagens>5) { @seriado.personagens(5) }" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    </p>
+   <p>
+    <input type="hidden" name="id" value="@seriado.id"/>
+    <input type="hidden" name="opt" value="alterar"/>
+    <input class="btn btn-primary btn-lg" type="submit" value="alterar" />
+   </p>
+    }
+
+    @form(routes.Application.remover(id)) {
+       <input type="submit" value="Remover" class="btn btn-primary">
+     }
+
+    @form(routes.Application.index()) {
+      <input class="btn btn-primary btn-lg" type="submit" value="lista de seriados" />
+    }
+
+</div>
+
+}

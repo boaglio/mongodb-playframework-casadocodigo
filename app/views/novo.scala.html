@@ -1,0 +1,51 @@
+@(seriadoForm : Form[Seriado])
+
+@main("Novo seriado") {
+
+   <div class="container">
+
+   @helper.form(action=routes.Application.gravar()) {
+
+  <div class="alert alert-success" role="alert">Novo seriado</div>
+   <p>
+    <div class="input-group">
+     <span class="input-group-addon">Nome</span>
+     <input type="text" name="nome" id="nome" class="form-control" placeholder="nome do seriado ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 1</span>
+     <input type="text" name="personagem1" id="personagem1" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 2</span>
+     <input type="text" name="personagem2" id="personagem2" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 3</span>
+     <input type="text" name="personagem3" id="personagem3" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 4</span>
+     <input type="text" name="personagem4" id="personagem4" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 5</span>
+     <input type="text" name="personagem5" id="personagem5" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    <div class="input-group">
+     <span class="input-group-addon">Personagem 6</span>
+     <input type="text" name="personagem6" id="personagem6" class="form-control" placeholder="nome de um personagem ?">
+    </div>
+    </p>
+   <p>
+    <input class="btn btn-primary btn-lg" type="submit" value="cadastrar !" />
+   </p>
+  </form>
+  <form method="post" action="@routes.Application.index()">
+   <input class="btn btn-primary btn-lg" type="submit" value="lista de seriados" />
+  </form>
+  </div>
+
+   }
+  </div>
+}
